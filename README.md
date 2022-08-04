@@ -1,16 +1,22 @@
-# what_todo
+# ForgetKo TODO app
 
-A new Flutter project.
+A new Flutter project inspired by a youtube tutorial by channel TVAC Studio.
 
-## Getting Started
+## Features of this app
 
-This project is a starting point for a Flutter application.
+- Home page with ListView of all tasks (with descriptions)
+- Task page with task title, task description, list of todos, and a field to add a new todo
+- SQLite database to store all the tasks and todo items
+- You can always modify task title and description
+- By tapping on checkbox you mark todo item as done
+- You can delete each todo item
+- You can delete a task
 
-A few resources to get you started if this is your first Flutter project:
+Screenshot of the app:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Home page:
+![alt text](assets/images/img.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Task page:
+![alt text](assets/images/img_1.png)
+

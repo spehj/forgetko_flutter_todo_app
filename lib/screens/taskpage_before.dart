@@ -90,7 +90,7 @@ class _TaskpageState extends State<Taskpage> {
                         Expanded(
                           child: Padding(
                             padding:
-                                const EdgeInsets.only(left: 2.0, right: 24.0),
+                            const EdgeInsets.only(left: 2.0, right: 24.0),
                             child: TextField(
                               focusNode: _titleFocus,
                               controller: TextEditingController()
@@ -104,7 +104,7 @@ class _TaskpageState extends State<Taskpage> {
                                         id: null,
                                         description: null);
                                     _taskId =
-                                        await _dbHelper.insertTask(_newTask);
+                                    await _dbHelper.insertTask(_newTask);
                                     //print("New task_id: $_taskId");
                                     setState(() {
                                       _contentVisible = true;
@@ -174,101 +174,27 @@ class _TaskpageState extends State<Taskpage> {
                           child: ListView.builder(
                               itemCount: snapshot.data?.length,
                               itemBuilder: (context, index) {
-                                return Container(
-                                  padding: EdgeInsets.symmetric(
-                                    vertical: 8.0,
-                                  ),
-                                  margin:
-                                      EdgeInsets.only(left: 24.0, right: 24.0),
-                                  child: Row(
-                                    children: [
-                                      GestureDetector(
-                                        onTap: () async {
-                                          int doneState =
-                                              snapshot.data[index].isDone;
-                                          int todoId = snapshot.data[index].id;
-                                          if (doneState == 0) {
-                                            doneState = 1;
-                                          } else if (doneState == 1) {
-                                            doneState = 0;
-                                          }
-                                          await _dbHelper.updateTodoDone(
-                                              _taskId, todoId, doneState);
+                                return GestureDetector(
+                                  onTap: () async {
+                                    int doneState = snapshot.data[index].isDone;
+                                    int todoId = snapshot.data[index].id;
+                                    if (doneState == 0) {
+                                      doneState = 1;
+                                    } else if (doneState == 1) {
+                                      doneState = 0;
+                                    }
+                                    await _dbHelper.updateTodoDone(
+                                        _taskId, todoId, doneState);
 
-                                          setState(() {});
-                                        },
-                                        child: Container(
-                                          width: 20.0,
-                                          height: 20.0,
-                                          margin: EdgeInsets.only(right: 12.0),
-                                          decoration: BoxDecoration(
-                                              color: (snapshot.data[index]
-                                                              .isDone ==
-                                                          0
-                                                      ? false
-                                                      : true)
-                                                  ? Color(0xFF7349FE)
-                                                  : Colors.transparent,
-                                              borderRadius:
-                                                  BorderRadius.circular(6.0),
-                                              border: (snapshot.data[index]
-                                                              .isDone ==
-                                                          0
-                                                      ? false
-                                                      : true)
-                                                  ? null
-                                                  : Border.all(
-                                                      color: Color(0xFF86829D),
-                                                      width: 1.5,
-                                                    )),
-                                          child: Image.asset(
-                                              'assets/images/check_icon.png'),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        child: Text(
-                                          snapshot.data[index].title,
-                                          style: TextStyle(
-                                            color:
-                                                (snapshot.data[index].isDone ==
-                                                            0
-                                                        ? false
-                                                        : true)
-                                                    ? Color(0xFF86829D)
-                                                    : Color(0xFF211551),
-                                            fontSize: 16.0,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                      ),
-                                      GestureDetector(
-                                        onTap: () async {
-                                          int todoId = snapshot.data[index].id;
-
-                                          if (todoId != null) {
-                                            await _dbHelper.deleteTodo(
-                                                _taskId, todoId);
-                                          }
-
-                                          setState(() {});
-                                        },
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Container(
-                                            width: 30.0,
-                                            height: 30.0,
-                                            margin: EdgeInsets.only(right: 0),
-                                            decoration: BoxDecoration(
-                                              color: Color(0xFFFE2577),
-                                              borderRadius:
-                                                  BorderRadius.circular(6.0),
-                                            ),
-                                            child: Image.asset(
-                                                'assets/images/delete_icon.png'),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
+                                    setState(() {});
+                                  },
+                                  child: Container(
+                                    child: TodoWidget(
+                                      text: snapshot.data[index].title,
+                                      isDone: snapshot.data[index].isDone == 0
+                                          ? false
+                                          : true,
+                                    ),
                                   ),
                                 );
                               }),
@@ -279,8 +205,7 @@ class _TaskpageState extends State<Taskpage> {
                   Visibility(
                     visible: _contentVisible,
                     child: Padding(
-                      padding: const EdgeInsets.only(
-                          left: 24.0, right: 24.0, bottom: 30),
+                      padding: const EdgeInsets.only(left: 24.0, right: 24.0, bottom: 30),
                       child: Row(
                         children: [
                           Container(
@@ -338,8 +263,8 @@ class _TaskpageState extends State<Taskpage> {
                   bottom: 24.0,
                   right: 24.0,
                   child: GestureDetector(
-                    onTap: () async {
-                      if (_taskId != null) {
+                    onTap: () async{
+                      if(_taskId != null){
                         await _dbHelper.deleteTask(_taskId);
                       }
 

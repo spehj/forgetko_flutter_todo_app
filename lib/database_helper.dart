@@ -64,6 +64,11 @@ class DatabaseHelper {
     await _db.rawDelete("DELETE FROM todo WHERE taskId=$taskId");
   }
 
+  Future<void> deleteTodo(int taskId, int todoId) async{
+    Database _db = await database();
+    await _db.rawDelete("DELETE FROM todo WHERE (taskId=$taskId AND id=$todoId)");
+  }
+
   // Method to help retreive list of all cards
   Future<List<Task>> getTasks() async {
     Database _db = await database();

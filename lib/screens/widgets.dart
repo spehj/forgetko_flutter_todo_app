@@ -37,7 +37,8 @@ class TaskCardWidget extends StatelessWidget {
                 height: 1.5,
               ),
             ),
-          )
+          ),
+
         ],
       ),
     );
@@ -79,7 +80,7 @@ class TodoWidget extends StatelessWidget {
 
             child: Image.asset('assets/images/check_icon.png'),
             ),
-          Flexible(
+          Expanded(
             child: Text(text,
             style: TextStyle(
               color: isDone ? Color(0xFF86829D) : Color(0xFF211551) ,
@@ -88,6 +89,22 @@ class TodoWidget extends StatelessWidget {
             ),
             ),
           ),
+
+          Container(
+
+            width: 30.0,
+            height: 30.0,
+            margin: EdgeInsets.only(right: 0),
+            decoration: BoxDecoration(
+                color: Color(0xFFFE2577),
+                borderRadius: BorderRadius.circular(6.0),
+
+            ),
+
+            child: Image.asset('assets/images/delete_icon.png'),
+          ),
+
+
 
         ],
       ),

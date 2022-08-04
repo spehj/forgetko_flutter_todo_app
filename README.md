@@ -15,11 +15,13 @@ A new Flutter project inspired by a youtube tutorial by channel TVAC Studio.
 Screenshot of the app:
 <br />
 <br />
-Home page:
+**Home page**:
 <br />
 <img src="assets/images/img.png" width=40%>
 <br />
-Task page:
+<br />
+<br />
+**Task page**:
 <br />
 <img src="assets/images/img_1.png" width=40%>
 <br />

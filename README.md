@@ -16,7 +16,7 @@ Screenshot of the app:
 
 Home page:
 <img src="assets/images/img.png" width=40%>
-
+<br>
 Task page:
 <img src="assets/images/img_1.png" width=40%>
 

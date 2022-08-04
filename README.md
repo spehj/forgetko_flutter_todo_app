@@ -7,7 +7,7 @@ A new Flutter project inspired by a youtube tutorial by channel TVAC Studio.
 - Home page with ListView of all tasks (with descriptions)
 - Task page with task title, task description, list of todos, and a field to add a new todo
 - SQLite database to store all the tasks and todo items
-- You can always modify task title and description
+- You can always modify task title, task description and each todo item
 - By tapping on checkbox you mark todo item as done
 - You can delete each todo item
 - You can delete a task

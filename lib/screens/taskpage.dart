@@ -226,8 +226,17 @@ class _TaskpageState extends State<Taskpage> {
                                         ),
                                       ),
                                       Expanded(
-                                        child: Text(
-                                          snapshot.data[index].title,
+                                        child: TextField(
+                                          controller: TextEditingController()..text = snapshot.data[index].title
+                                          ,
+                                          onSubmitted: (value) async {
+                                            if (value != "") {
+                                              await _dbHelper.updateTodoTitle(
+                                                  _taskId, snapshot.data[index].id, value);
+                                              setState(() {
+                                              });
+                                            }
+                                          },
                                           style: TextStyle(
                                             color:
                                                 (snapshot.data[index].isDone ==
@@ -239,6 +248,11 @@ class _TaskpageState extends State<Taskpage> {
                                             fontSize: 16.0,
                                             fontWeight: FontWeight.bold,
                                           ),
+                                          decoration: InputDecoration(
+                                              hintText: "What is my next thing to do?",
+                                              border: InputBorder.none,
+                                              ),
+
                                         ),
                                       ),
                                       GestureDetector(

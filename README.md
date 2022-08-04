@@ -13,10 +13,11 @@ A new Flutter project inspired by a youtube tutorial by channel TVAC Studio.
 - You can delete a task
 
 Screenshot of the app:
-
-Home page:
-<img src="assets/images/img.png" width=40%>
 $~$
+Home page:
+$~$
+<img src="assets/images/img.png" width=40%>
+
 
 
 Task page:

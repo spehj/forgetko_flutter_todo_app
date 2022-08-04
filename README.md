@@ -15,6 +15,9 @@ A new Flutter project inspired by a youtube tutorial by channel TVAC Studio.
 Screenshot of the app:
 
 Home page:
+<img src="assets/images/img.png" width=50%>
+
+
 ![Home page](assets/images/img.png){width=40%}
 
 Task page:
